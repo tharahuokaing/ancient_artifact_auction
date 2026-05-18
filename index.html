@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Artifact Auction</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>ANCIENT ARTIFACT AUCTION</h1>
+
+        <p class="author">
+            Research Study by Huokaing Thara
+        </p>
+
+        <div class="auction-card">
+
+            <img 
+                src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1200&auto=format&fit=crop" 
+                alt="Ancient Artifact"
+            >
+
+            <h2>Khmer Ancient Ceramic Plate</h2>
+
+            <p>
+                A rare historical artifact estimated to be over 200 years old.
+            </p>
+
+            <div class="price-box">
+                Current Bid:
+                <span id="currentBid">$100</span>
+            </div>
+
+            <input 
+                type="number" 
+                id="bidInput" 
+                placeholder="Enter your bid amount"
+            >
+
+            <button onclick="placeBid()">
+                PLACE BID
+            </button>
+
+            <p id="message"></p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
