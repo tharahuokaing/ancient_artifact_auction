@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+    background:
+        radial-gradient(circle at top, rgba(0,255,255,0.15), transparent 40%),
+        radial-gradient(circle at bottom, rgba(0,180,255,0.12), transparent 45%),
+        linear-gradient(135deg, #050816, #09142b, #02030a);
+    overflow-x: hidden;
+    color: #d7ffff;
+}
+
+/* Animated hologram background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(0,255,255,0.04),
+            rgba(0,255,255,0.04) 2px,
+            transparent 2px,
+            transparent 6px
+        );
+    animation: scan 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 650px;
+    margin: 40px auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 38px;
+    color: #7ffcff;
+    text-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00c8ff,
+        0 0 40px #0088ff;
+    letter-spacing: 3px;
+}
+
+.author {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #8fdcff;
+    font-size: 14px;
+    text-shadow: 0 0 10px cyan;
+}
+
+/* Main hologram card */
+.auction-card {
+    position: relative;
+    background: rgba(8, 20, 45, 0.55);
+    border: 1px solid rgba(0,255,255,0.4);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.25),
+        inset 0 0 30px rgba(0,255,255,0.08);
+    overflow: hidden;
+}
+
+/* glowing border animation */
+.auction-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(
+        45deg,
+        #00ffff,
+        #00aaff,
+        #7f5cff,
+        #00ffff
+    );
+    background-size: 300% 300%;
+    animation: borderGlow 6s linear infinite;
+    z-index: -1;
+}
+
+@keyframes borderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
+}
+
+.auction-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid rgba(0,255,255,0.4);
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.35);
+    filter:
+        brightness(1.05)
+        contrast(1.1)
+        saturate(1.2);
+}
+
+.auction-card h2 {
+    margin-top: 18px;
+    color: #7ffcff;
+    text-shadow: 0 0 12px cyan;
+    letter-spacing: 2px;
+}
+
+.auction-card p {
+    color: #b8e8ff;
+}
+
+/* Price hologram box */
+.price-box {
+    margin: 22px 0;
+    padding: 15px;
+    border-radius: 14px;
+    background: rgba(0,255,255,0.08);
+    border: 1px solid rgba(0,255,255,0.3);
+    color: #00ffff;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow:
+        0 0 10px cyan,
+        0 0 20px #00aaff;
+    box-shadow:
+        inset 0 0 15px rgba(0,255,255,0.1),
+        0 0 20px rgba(0,255,255,0.2);
+}
+
+input {
+    width: 80%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,255,255,0.35);
+    background: rgba(0, 15, 35, 0.8);
+    color: #dfffff;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 18px;
+    transition: 0.3s;
+    box-shadow:
+        inset 0 0 10px rgba(0,255,255,0.08);
+}
+
+input:focus {
+    border-color: #00ffff;
+    box-shadow:
+        0 0 12px cyan,
+        inset 0 0 12px rgba(0,255,255,0.2);
+}
+
+input::placeholder {
+    color: #7ab8cc;
+}
+
+/* Hologram button */
+button {
+    background: linear-gradient(
+        135deg,
+        rgba(0,255,255,0.25),
+        rgba(0,120,255,0.35)
+    );
+    border: 1px solid rgba(0,255,255,0.5);
+    color: #dfffff;
+    padding: 14px 30px;
+    border-radius: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 0 15px rgba(0,255,255,0.25);
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(
+        135deg,
+        rgba(0,255,255,0.4),
+        rgba(0,120,255,0.55)
+    );
+    box-shadow:
+        0 0 25px cyan,
+        0 0 40px rgba(0,180,255,0.4);
+}
+
+#message {
+    margin-top: 18px;
+    font-size: 16px;
+    text-shadow: 0 0 8px cyan;
+}
