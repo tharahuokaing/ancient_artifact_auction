@@ -22,7 +22,7 @@ function placeBid(buttonElement) {
     if (userBidValue > currentBidValue) {
         currentBidElement.textContent = "$" + userBidValue.toFixed(2);
         messageElement.style.color = "green";
-        messageElement.textContent = "Bid placed successfully!";
+        messageElement.textContent = "Bid placed successfully!!!";
         bidInput.value = ""; // Clear input box
     } else {
         messageElement.style.color = "red";
